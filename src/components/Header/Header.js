@@ -7,6 +7,7 @@ const Headrer = () => {
 
     const MENU = ['Menu 1', 'Menu 2', 'Menu 3', 'Menu 4'];
 
+
     return (
         <header className={s.root}>
             <div className={s.header}>

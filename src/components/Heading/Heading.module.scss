@@ -1,0 +1,45 @@
+.root{
+    margin-bottom: 0.5em;
+    color: white;
+    font-weight: 600;
+
+    line-height: 1.23;
+
+    &.backLine {
+        text-align: center;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 30%;
+            max-width: 100px;
+            position: relative;
+            border-bottom: 1px solid #aaa;
+            margin: 15px auto 0;
+        }
+    }
+}
+
+.h1 {
+    font-size: 38px;
+}
+
+.h2 {
+    font-size: 30px;
+}
+
+.h3 {
+    font-size: 24px;
+}
+
+.h4 {
+    font-size: 20px;
+}
+
+.h5 {
+    font-size: 16px;
+}
+
+.colorBlack {
+    color: black;
+}

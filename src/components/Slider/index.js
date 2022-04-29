@@ -3,6 +3,7 @@ import Container from "../Container";
 import Heading from "../Heading/Heading";
 
 import s from './style.module.css';
+import Button from "../Button/Button";
 
 const Slider = () => {
     return (
@@ -13,10 +14,8 @@ const Slider = () => {
                     <Heading className={s.subheader} level={2} black>Wow</Heading>
 
 
+                    <Button type={'Wow'}/>
 
-                    <div className={s.call}>
-                        <button className={s.button}>Wow</button>
-                    </div>
                 </Container>
             </div>
         </section>

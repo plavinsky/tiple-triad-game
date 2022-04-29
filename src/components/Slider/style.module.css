@@ -72,6 +72,24 @@
     cursor: pointer;
 }
 
+.buttonBack {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #000000;
+    border: 1px solid white;
+    padding: 8px 13px;
+    font-size: 20px;
+    transition: background 0.15s linear;
+}
+
+.buttonBack:hover {
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
 @media (max-width: 1024px) {
     .container {
         margin: 0 25px;

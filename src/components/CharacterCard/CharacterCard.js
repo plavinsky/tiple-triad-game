@@ -19,11 +19,11 @@ const CharacterCard = (
 ) => {
     const handleLikeClick = () => {
 
-        onLike(id)
+        onLike && onLike(id)
     }
 
     const handleReadBioClick = () => {
-        onReadBio(id);
+        onReadBio && onReadBio(id);
     }
 
     return (
@@ -70,7 +70,7 @@ CharacterCard.propTypes = {
     description: PropTypes.string,
     isLike: PropTypes.bool,
     onLike: PropTypes.func,
-    //onReadBioClick: PropTypes.func,
+    onReadBio: PropTypes.func,
 }
 
 export default CharacterCard;

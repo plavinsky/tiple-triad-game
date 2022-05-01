@@ -9,7 +9,7 @@ import CharacterCard from "./components/CharacterCard/CharacterCard";
 import style from "./App.module.scss";
 import Heading from "./components/Heading/Heading";
 import {useState} from "react";
-import Biography from "./components/Button/Biography/Biography";
+import Biography from "./pages/Biography/Biography";
 
 const CHARACTER = [
     {
@@ -90,7 +90,6 @@ function App() {
 
             return item;
         }));
-
     };
 
     const handlerReadBio = (id) => {
@@ -98,55 +97,46 @@ function App() {
         setShowBioId(id)
     };
 
+    return (
+        <>
+            <Header/>
+            <Slider/>
+            {showBioId && <Biography id={showBioId} onGoBack={() => setShowBioId(null)}/>}
+            {!showBioId && (
+                <section className={style.cardSection}>
+                    <Container id={1}>
+                        <div className={style.cardTitle}>
+                            <Heading backLine black>
+                                Marvel Cards
+                            </Heading>
+                            <Heading level={2} black>
+                                Collect your best five
+                            </Heading>
+                        </div>
+                        <div className={style.cardWrap}>
+                            {characters.map((item, index) => {
+                                return (
+                                    <CharacterCard
+                                        key={index}
+                                        id={item.id}
+                                        name={item.name}
+                                        description={item.description}
+                                        thumbnail={item.thumbnail.path}
+                                        humanName={item.humanName}
+                                        isLike={item.isLike}
+                                        onLike={handlerLike}
+                                        onReadBio={handlerReadBio}
+                                    />
+                                )
+                            })}
+                        </div>
+                    </Container>
+                </section>
+            )}
+            <Footer/>
+        </>
 
-
-  return (
-      <>
-        <Header/>
-
-          { showBioId && <Biography id={showBioId} onGoBack={() => setShowBioId(null)}/> }
-
-          {!showBioId && (
-              <div>
-                  <Slider/>
-
-                  <section className={style.cardSection}>
-                      <Container id={1}>
-                          <div className={style.cardTitle}>
-                              <Heading backLine black>
-                                  Marvel Cards
-                              </Heading>
-                              <Heading level={2} black>
-                                  Collect your best five
-                              </Heading>
-                          </div>
-                          <div className={style.cardWrap}>
-                              {characters.map((item, index) => {
-
-                                  return (
-                                      <CharacterCard
-                                          key={index}
-                                          id={item.id}
-                                          name={item.name}
-                                          description={item.description}
-                                          thumbnail={item.thumbnail.path}
-                                          humanName={item.humanName}
-                                          isLike={item.isLike}
-                                          onLike={handlerLike}
-                                          onReadBio={handlerReadBio}
-                                      />
-                                  )
-                              })}
-                          </div>
-                      </Container>
-                  </section>
-              </div>
-          )}
-
-        <Footer/>
-      </>
-
-  );
+    );
 }
 
 export default App;

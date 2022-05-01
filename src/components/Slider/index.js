@@ -13,8 +13,9 @@ const Slider = () => {
                     <Heading className={s.header} level={1}>Wow</Heading>
                     <Heading className={s.subheader} level={2} black>Wow</Heading>
 
-
-                    <Button type={'Wow'}/>
+                    <div className={s.call}>
+                    <Button color="default">Wow1</Button>
+                    </div>
 
                 </Container>
             </div>

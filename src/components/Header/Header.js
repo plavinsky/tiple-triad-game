@@ -4,15 +4,13 @@ import logoPng from '../../assets/logo.png';
 import Container from "../Container";
 import {useEffect, useState} from "react";
 import cn from "classnames";
+import {Link} from "react-router-dom";
 
 const Headrer = () => {
 
     const [headerStyles, setHeaderStyles] = useState(s.header)
 
-    const MENU = ['Menu 1', 'Menu 2', 'Menu 3', 'Menu 4'];
-
     const handleScroll = (e) => {
-        console.log(window.scrollY)
         setHeaderStyles(cn(s.header, {
             [s.small]: window.scrollY > 60
             }))
@@ -30,9 +28,10 @@ const Headrer = () => {
                 <Container className={s.headerWrap}>
                     <img src={logoPng} alt="logo"/>
                     <ul className={s.nav}>
-                        {MENU.map((item, index) => {
-                            return <li key={index}><a href="#">{item}</a></li>
-                        })}
+                        <li ><Link to="/">Main</Link></li>
+                        <li ><Link to="/characters">Characters</Link></li>
+                        <li ><Link to="/about">About game</Link></li>
+                        <li ><Link to="/contacts">Contacts</Link></li>
                     </ul>
                 </Container>
             </div>
